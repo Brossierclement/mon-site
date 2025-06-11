@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #202020;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-family: "MedievalSharp", cursive;
+}
+
+body {
+  background-color: #fcfcfc;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 6vw;
+}
+body header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 4rem 0;
+}
+body header .introduce {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+body header .introduce h1 {
+  font-size: 32px;
+  line-height: 0.8;
+}
+body header .introduce .domain {
+  color: #2a7e3b;
+  font-weight: 700;
+}
+body header .introduce .quote,
+body header .introduce .author {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  max-width: 40ch;
+}
+body header .socials {
+  display: flex;
+  gap: 8px;
+  padding-top: 16px;
+}
+body header .socials img {
+  display: block;
+}
+body .main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+body .main-container main h2 {
+  margin-bottom: 32px;
+}
+body .main-container main .space {
+  margin-bottom: 64px;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    gap: 8px;
+  }
+  body header {
+    box-sizing: border-box;
+    justify-content: space-between;
+    max-height: 100vh;
+    padding: 6rem 0;
+    position: sticky;
+    top: 0;
+    width: 48%;
+  }
+  body .main-container {
+    padding: 6rem 0;
+    width: 52%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

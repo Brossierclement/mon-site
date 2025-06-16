@@ -11,7 +11,8 @@ a {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: "MedievalSharp", cursive;
 }
 
@@ -27,7 +28,7 @@ body .creeping-leaves {
   inset: 44% 0 0 50%;
   max-width: 100%;
   object-fit: cover;
-  opacity: 0.2;
+  opacity: 0.1;
   position: fixed;
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -83,35 +84,80 @@ body .main-container .about p {
   font-weight: 400;
 }
 body .main-container .skills {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 body .main-container .skills .skill-cube {
-  align-items: center;
   backdrop-filter: blur(4px);
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
+  flex-direction: column;
+  gap: 8px;
   padding: 12px 8px;
+  width: 112px;
 }
 body .main-container .skills .skill-cube img {
   border-radius: 8px 0 0 8px;
-  flex: 1;
   height: 48px;
   object-fit: contain;
 }
 body .main-container .skills .skill-cube p {
-  flex: 2;
   font-weight: 600;
   text-align: center;
 }
-
-@media (min-width: 425px) {
-  body .main-container main .skills {
-    grid-template-columns: repeat(2, 1fr);
-  }
+body .main-container .projects {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
+body .main-container .projects .card-project {
+  max-width: 768px;
+  padding: 8px;
+  position: relative;
+}
+body .main-container .projects .card-project .papyrus {
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+body .main-container .projects .card-project .card-title {
+  display: flex;
+}
+body .main-container .projects .card-project .card-title .first-letter {
+  color: red;
+  font-size: 80px;
+}
+body .main-container .projects .card-project .card-title .next-letters {
+  padding-top: 16px;
+}
+body .main-container .projects .card-project .card-title p {
+  text-align: end;
+}
+body .main-container .projects .card-project .technology {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+body .main-container .projects .card-project .technology p {
+  border: 1px solid #3e9b4f;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+}
+body .main-container footer {
+  text-align: center;
+}
+
 @media (min-width: 596px) {
   body .main-container main .skills {
     grid-template-columns: repeat(3, 1fr);

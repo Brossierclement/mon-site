@@ -1,186 +1,238 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 * {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
 }
 
 a {
-  color: #202020;
+  color: #eeeeee;
   text-decoration: none;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "MedievalSharp", cursive;
-}
-
 body {
-  background-color: #fcfcfc;
-  margin: 0 auto;
-  max-width: 1024px;
-  padding: 0 6vw;
+  background-color: #191919;
+  color: #eeeeee;
   position: relative;
 }
-body .creeping-leaves {
+body .background-video {
   height: 100%;
-  inset: 44% 0 0 50%;
-  max-width: 100%;
+  left: 50%; /* à 50%/50% du parent référent */
   object-fit: cover;
-  opacity: 0.1;
+  opacity: 0.6;
   position: fixed;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-body header {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin: 4rem 0;
-}
-body header .introduce {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-body header .introduce h1 {
-  font-size: 32px;
-  line-height: 0.8;
-}
-body header .introduce .domain {
-  color: #2a7e3b;
-  font-weight: 700;
-}
-body header .introduce .quote,
-body header .introduce .author {
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-weight: 500;
-  max-width: 40ch;
-}
-body header .socials {
-  display: flex;
-  gap: 8px;
-  padding-top: 16px;
-}
-body header .socials img {
-  display: block;
-  height: 32px;
-}
-body .main-container {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 0;
-}
-body .main-container main h2 {
-  margin-bottom: 32px;
-}
-body .main-container main .space {
-  margin-bottom: 64px;
-}
-body .main-container .about p {
-  font-size: 16px;
-  font-weight: 400;
-}
-body .main-container .skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-body .main-container .skills .skill-cube {
-  backdrop-filter: blur(4px);
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 12px 8px;
-  width: 112px;
-}
-body .main-container .skills .skill-cube img {
-  border-radius: 8px 0 0 8px;
-  height: 48px;
-  object-fit: contain;
-}
-body .main-container .skills .skill-cube p {
-  font-weight: 600;
-  text-align: center;
-}
-body .main-container .projects {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-body .main-container .projects .card-project {
-  max-width: 768px;
-  padding: 8px;
-  position: relative;
-}
-body .main-container .projects .card-project .papyrus {
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  height: 100%;
-  left: 0;
-  object-fit: cover;
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
   width: 100%;
   z-index: -1;
 }
-body .main-container .projects .card-project .card-title {
+body header {
+  align-items: center;
   display: flex;
+  height: 48px;
+  left: 0;
+  padding: 8px 16px;
+  position: fixed;
+  right: 0;
+  z-index: 1;
 }
-body .main-container .projects .card-project .card-title .first-letter {
-  color: red;
-  font-size: 80px;
-}
-body .main-container .projects .card-project .card-title .next-letters {
-  padding-top: 16px;
-}
-body .main-container .projects .card-project .card-title p {
-  text-align: end;
-}
-body .main-container .projects .card-project .technology {
+body header .off-screen-menu {
+  align-items: center;
+  background-color: rgba(25, 25, 25, 0.8);
+  backdrop-filter: blur(2px);
+  border-left: 1px solid #e9d19c;
   display: flex;
-  gap: 8px;
-  margin-top: 8px;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  max-width: 90vw;
+  position: fixed;
+  right: -90vw;
+  top: 0;
+  transition: 0.3s ease;
+  width: 100%;
 }
-body .main-container .projects .card-project .technology p {
-  border: 1px solid #3e9b4f;
-  border-radius: 16px;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 4px 8px;
+body header .off-screen-menu a {
+  font-size: 32px;
 }
-body .main-container footer {
+body header .off-screen-menu.active {
+  right: 0;
+}
+body header .ham-menu {
+  background: none;
+  border: none;
+  height: 40px;
+  margin-left: auto;
+  position: relative;
+  width: 30px;
+}
+body header .ham-menu span {
+  background-color: #eeeeee;
+  border-radius: 24px;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+  width: 100%;
+}
+body header .ham-menu span:nth-child(1) {
+  top: 25%;
+}
+body header .ham-menu span:nth-child(3) {
+  top: 75%;
+}
+body header .ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+body header .ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+body header .ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+body header .header-nav {
+  display: none;
+}
+body main {
+  padding: 0 16px;
+}
+body main .name-links {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: calc(100vh - 80px);
+  padding: 72px 40px 50px 40px;
+}
+body main .name-links .my-story {
+  color: #e9d19c;
+  display: none;
+  font-family: MedievalSharp;
+  font-size: 40px;
+}
+body main .name-links .my-name {
+  font-size: 60px;
+  line-height: 0.9;
+  margin-top: auto;
   text-align: center;
 }
-
-@media (min-width: 596px) {
-  body .main-container main .skills {
-    grid-template-columns: repeat(3, 1fr);
+body main .name-links nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+body main .name-links nav a {
+  background-color: rgba(34, 34, 34, 0.4);
+  border: 1px solid #e9d19c;
+  font-size: 24px;
+  min-width: 226px;
+  position: relative;
+  text-align: center;
+  transition: 0.3s ease;
+}
+body main .name-links nav a::before {
+  border: 1px solid #e9d19c;
+  content: "";
+  inset: 0;
+  opacity: 0.4;
+  margin: -8px;
+  position: absolute;
+}
+body main .name-links nav a:hover {
+  box-shadow: rgba(233, 209, 156, 0.4) 0px 0px 56px;
+}
+body main .scroll-icon {
+  border: 1px solid white;
+  border-radius: 16px;
+  height: 32px;
+  margin: 0 auto;
+  width: 16px;
+}
+body main .scroll-icon div {
+  animation: scroll 2s infinite;
+  background-color: white;
+  border-radius: 1px;
+  height: 5px;
+  margin: 5px auto;
+  width: 2px;
+}
+@keyframes scroll {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    gap: 8px;
+body main .introduce {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 64px;
+  text-align: center;
+}
+body main .introduce h1 {
+  color: #e9d19c;
+  font-family: MedievalSharp;
+  font-size: 32px;
+}
+body footer {
+  align-items: center;
+  background-color: rgba(17, 17, 17, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 64px;
+  padding: 40px 10px;
+}
+body footer .socials {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+body footer .socials a img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7155%) hue-rotate(268deg) brightness(129%) contrast(87%);
+  height: 32px;
+}
+
+@media only screen and (min-width: 768px) {
+  body main .name-links .my-story {
+    display: block;
   }
+}
+@media only screen and (min-width: 1024px) {
   body header {
-    box-sizing: border-box;
-    justify-content: space-between;
-    margin: 0;
-    max-height: 100vh;
-    padding: 6rem 0;
-    position: sticky;
-    top: 0;
-    width: 48%;
+    justify-content: center;
   }
-  body .main-container {
-    padding: 6rem 0;
-    width: 52%;
+  body header .ham-menu,
+  body header .off-screen-menu {
+    display: none;
+  }
+  body header .header-nav {
+    display: flex;
+    gap: 16px;
+  }
+  body header .header-nav a {
+    color: #eeeeee;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+  body header .header-nav a:hover {
+    color: #e9d19c;
+  }
+  body main .name-links .my-story {
+    display: block;
   }
 }
 

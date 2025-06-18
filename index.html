@@ -17,156 +17,76 @@
     <script src="scripts/index.js" defer></script>
   </head>
   <body>
+    <video
+      class="background-video"
+      src="assets/videos/The Witcher 3  Animated Wallpaper  Kaer Morhen.mp4"
+      type="video/mp4"
+      autoplay
+      muted
+      loop
+    ></video>
     <header>
-      <section class="introduce">
-        <h1>Clément Brossier</h1>
-        <p class="domain">DÉVELOPPEUR FRONTEND</p>
-        <p class="quote">
-          "Je crois que ce sont les petites choses, les gestes quotidiens des
-          gens ordinaires qui nous préserve du mal."
-        </p>
-        <p class="author">Gandalf</p>
-      </section>
-      <nav class="socials">
-        <a href="https://github.com/Brossierclement" target="_blank">
-          <img src="assets/icons/mdi--github.svg" alt="Logo de Github" />
-        </a>
-        <a href="" target="_blank">
-          <img src="assets/icons/mdi--instagram.svg" alt="Logo d'Instagram" />
-        </a>
+      <nav class="off-screen-menu">
+        <a href="">À propos</a>
+        <a href="">Projets</a>
+        <a href="">Contacts</a>
+      </nav>
+      <button class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="header-nav">
+        <a href="">À propos</a>
+        <a href="">Projets</a>
+        <a href="">Contacts</a>
       </nav>
     </header>
-    <div class="main-container">
-      <img
-        class="creeping-leaves"
-        src="assets/images/creeping-leaves.png"
-        alt="Images de feuilles grimpantes"
-      />
-      <main>
-        <h2>À propos</h2>
-        <section class="about space">
-          <p>
-            Salutations&nbsp;!
-            <br /><br />
-            Je me nomme Clément Brossier, jeune apprenti dans la magie du
-            développement et plus précisément celle du Web. Suite à deux années
-            de pause et de nombreuses quêtes refusées, j'ai décidé de me
-            remettre en selle.
-            <br /><br />
-            Aujourd'hui, je m'affaire à apprendre et renforcer mes compétences
-            afin de devenir, un jour, un grand maître dans l'art du
-            développement web.
-            <br /><br />
-            Je ne possède pas encore d'expérience professionnelle dans ce
-            domaine, mais j'y travaille activement, en forgeant des projets que
-            j'espère dignes de votre regard.
-            <br /><br />
-            Durant mon temps libre, j'aime me perdre dans les jeux vidéo, les
-            livres et les films fantastiques. Il faut croire que j'ai l'âme d'un
-            rêveur.
-          </p>
-        </section>
-        <h2>Compétences</h2>
-        <section class="skills space">
-          <div class="skill-cube">
-            <img src="assets/icons/grimoire.png" alt="Logo de JavaScript" />
-            <p>JavaScript</p>
-          </div>
-          <div class="skill-cube">
-            <img src="assets/icons/staff.png" alt="Logo de React" />
-            <p>React</p>
-          </div>
-          <div class="skill-cube">
-            <img src="assets/icons/art.png" alt="Logo de Figma" />
-            <p>Figma</p>
-          </div>
-        </section>
-        <h2>Projets</h2>
-        <section class="projects space">
-          <article class="card-project">
-            <img
-              class="papyrus"
-              src="assets/images/papyrus.jpg"
-              alt="Texture de papyrus"
-            />
-            <div class="card-title">
-              <h3 class="first-letter">C</h3>
-              <div>
-                <h3 class="next-letters">réation du portfolio</h3>
-                <p>2025 - 2025</p>
-              </div>
-            </div>
-            <div class="card-introduce">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                iure accusantium debitis ex tempora voluptatem itaque, eius
-                quibusdam aliquid placeat in, maxime quo nesciunt esse dolor
-                dignissimos commodi repellat blanditiis!
-              </p>
-            </div>
-            <div class="technology">
-              <p>JavaScript</p>
-            </div>
-          </article>
-          <!-- ----- -->
-          <article class="card-project">
-            <img
-              class="papyrus"
-              src="assets/images/papyrus.jpg"
-              alt="Texture de papyrus"
-            />
-            <div class="card-title">
-              <h3 class="first-letter">R</h3>
-              <div>
-                <h3 class="next-letters">eproduction de Twitch</h3>
-                <p>2025 - 2025</p>
-              </div>
-            </div>
-            <div class="card-introduce">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                iure accusantium debitis ex tempora voluptatem itaque, eius
-                quibusdam aliquid placeat in, maxime quo nesciunt esse dolor
-                dignissimos commodi repellat blanditiis!
-              </p>
-            </div>
-            <div class="technology">
-              <p>React</p>
-              <p>JavaScript</p>
-            </div>
-          </article>
-          <!-- ----- -->
-          <article class="card-project">
-            <img
-              class="papyrus"
-              src="assets/images/papyrus.jpg"
-              alt="Texture de papyrus"
-            />
-            <div class="card-title">
-              <h3 class="first-letter">R</h3>
-              <div>
-                <h3 class="next-letters">éalisation d'un Pokédex</h3>
-                <p>2025 - 2025</p>
-              </div>
-            </div>
-            <div class="card-introduce">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                iure accusantium debitis ex tempora voluptatem itaque, eius
-                quibusdam aliquid placeat in, maxime quo nesciunt esse dolor
-                dignissimos commodi repellat blanditiis!
-              </p>
-            </div>
-            <div class="technology">
-              <p>React</p>
-              <p>JavaScript</p>
-            </div>
-          </article>
-        </section>
-      </main>
-      <footer>
-        <p>@ 2025 Clément - C'est en forgeant qu'on devient forgeron</p>
-      </footer>
-    </div>
+    <main>
+      <section class="name-links">
+        <h1 class="my-story">Une nouvelle histoire commence</h1>
+        <h1 class="my-name">Clément Brossier</h1>
+        <nav>
+          <a href="">Projets</a>
+          <a href="">Twitch</a>
+        </nav>
+      </section>
+      <div class="scroll-icon">
+        <div></div>
+      </div>
+      <section class="introduce">
+        <h1>Bienvenue dans mon univers</h1>
+        <p>
+          Salutations&nbsp;!
+          <br /><br />
+          Je me nomme Clément Brossier, jeune apprenti dans la magie du
+          développement&nbsp;— et plus précisément celle du Web. Suite à deux
+          années de pause et de nombreuses quêtes refusées, j'ai décidé de me
+          remettre en selle.
+          <br /><br />
+          Aujourd’hui, je m’affaire à apprendre et renforcer mes compétences
+          afin de devenir, un jour, un grand maître dans l’art du développement
+          web.
+          <br /><br />
+          Je ne possède pas encore d’expérience professionnelle dans ce domaine,
+          mais j’y travaille activement, en forgeant des projets que j’espère
+          dignes de votre regard.
+          <br /><br />
+          Durant mon temps libre, j’aime me perdre dans les jeux vidéo, les
+          livres et les films fantastiques. Il faut croire que j’ai l’âme d’un
+          rêveur.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <nav class="socials">
+        <a href=""> <img src="assets/icons/mdi--github.svg" alt="" /></a>
+        <a href=""> <img src="assets/icons/mdi--instagram.svg" alt="" /></a>
+        <a href=""> <img src="assets/icons/mdi--twitch.svg" alt="" /></a>
+        <a href=""> <img src="assets/icons/mdi--youtube.svg" alt="" /></a>
+      </nav>
+      <p>brossier.contact@gmail.com</p>
+      © 2025 Clément Brossier. Tous droits réservés.
+    </footer>
   </body>
 </html>

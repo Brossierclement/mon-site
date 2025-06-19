@@ -15,18 +15,30 @@ a {
 
 body {
   background-color: colors.$low-background;
+  background-position: center center;
+  background-size: cover;
   color: colors.$high-contrast-text;
   position: relative;
   .background-video {
     height: 100%;
     left: 50%; /* à 50%/50% du parent référent */
     object-fit: cover;
-    opacity: 0.6;
+    opacity: 1;
     position: fixed;
     top: 50%;
     transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
     width: 100%;
     z-index: -1;
+  }
+  .background-image {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    opacity: 0.1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -2;
   }
   header {
     align-items: center;
@@ -36,7 +48,25 @@ body {
     padding: 8px 16px;
     position: fixed;
     right: 0;
+    transition: background-color 0.8s ease;
     z-index: 1;
+    .header-fog {
+      background: linear-gradient(
+        to bottom,
+        colors.$high-background 30%,
+        transparent 100%
+      );
+      backdrop-filter: blur(2px);
+      content: "";
+      height: 120px;
+      left: 0;
+      mask: linear-gradient(180deg, black 60%, rgba(0, 0, 0, 0));
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+    }
     .off-screen-menu {
       align-items: center;
       background-color: rgba(colors.$low-background-rgb, 0.8);
@@ -102,6 +132,9 @@ body {
     .header-nav {
       display: none;
     }
+  }
+  header.visible::before {
+    opacity: 1;
   }
   main {
     padding: 0 16px;
@@ -182,12 +215,16 @@ body {
       display: flex;
       flex-direction: column;
       gap: 16px;
-      margin-top: 64px;
+      margin: 64px auto 0 auto;
+      max-width: 768px;
       text-align: center;
       h1 {
         color: #e9d19c;
         font-family: MedievalSharp;
         font-size: 32px;
+      }
+      p {
+        font-size: 26px;
       }
     }
   }

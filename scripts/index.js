@@ -26,3 +26,24 @@ hamMenu.addEventListener("click", () => {
 // ctx.lineTo(30, 100);
 // ctx.lineTo(100, 50);
 // ctx.fill();
+
+// const header = document.querySelector("header");
+// window.addEventListener("scroll", () => {
+//   let scrollTop = window.scrollY;
+
+//   if (scrollTop >= 20) {
+//     header.classList.add("header-scroll");
+//   } else {
+//     header.classList.remove("header-scroll");
+//   }
+// });
+
+const headerFog = document.querySelector(".header-fog");
+const bgVideo = document.querySelector(".background-video");
+
+window.addEventListener("scroll", () => {
+  console.log("scroll");
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  headerFog.style.opacity = 0 + scrollTop / 800;
+  bgVideo.style.opacity = 1 - scrollTop / 800;
+});

@@ -40,10 +40,12 @@ hamMenu.addEventListener("click", () => {
 
 const headerFog = document.querySelector(".header-fog");
 const bgVideo = document.querySelector(".background-video");
+const email = document.querySelector(".email");
 
 window.addEventListener("scroll", () => {
   console.log("scroll");
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  headerFog.style.opacity = 0 + scrollTop / 800;
-  bgVideo.style.opacity = 1 - scrollTop / 800;
+  headerFog.style.opacity = 0 + scrollTop / 1000;
+  bgVideo.style.opacity = 1 - scrollTop / 1000;
+  email.style.opacity = 0 + scrollTop / 1000;
 });

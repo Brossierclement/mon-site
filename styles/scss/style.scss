@@ -13,11 +13,16 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  color: #e9d19c;
+  font-family: MedievalSharp;
+}
+
 body {
   background-color: colors.$low-background;
   background-position: center center;
   background-size: cover;
-  color: colors.$high-contrast-text;
+  color: colors.$medium-contrast-text;
   position: relative;
   .background-video {
     height: 100%;
@@ -50,6 +55,9 @@ body {
     right: 0;
     transition: background-color 0.8s ease;
     z-index: 1;
+    .email {
+      opacity: 0;
+    }
     .header-fog {
       background: linear-gradient(
         to bottom,
@@ -78,7 +86,7 @@ body {
       justify-content: center;
       max-width: 90vw;
       position: fixed;
-      right: -90vw;
+      right: -91vw;
       top: 0;
       transition: 0.3s ease;
       width: 100%;
@@ -143,7 +151,7 @@ body {
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 32px;
       height: calc(100vh - 80px);
       padding: 72px 40px 50px 40px;
       .my-story {
@@ -153,6 +161,7 @@ body {
         font-size: 40px;
       }
       .my-name {
+        color: colors.$high-contrast-text;
         font-size: 60px;
         line-height: 0.9;
         margin-top: auto;
@@ -215,16 +224,104 @@ body {
       display: flex;
       flex-direction: column;
       gap: 16px;
-      margin: 64px auto 0 auto;
+      margin: 64px auto;
       max-width: 768px;
       text-align: center;
+      position: relative;
       h1 {
-        color: #e9d19c;
-        font-family: MedievalSharp;
-        font-size: 32px;
+        font-size: clamp(32px, 4vw, 56px);
+        margin: 0 auto;
+        max-width: 460px;
+        padding: 16px 0;
+        position: relative;
+        &::before,
+        &::after {
+          background-color: colors.$colored-contrast-text;
+          content: "";
+          height: 1px;
+          left: 50%;
+          margin: 0 auto;
+          max-width: 200px;
+          position: absolute;
+          right: 50%;
+          transform: translate(-50%, -50%);
+          width: 150px;
+        }
+        &::before {
+          top: 0;
+        }
+        &::after {
+          bottom: 0;
+        }
       }
       p {
-        font-size: 26px;
+        font-size: 20px;
+      }
+    }
+    .skills {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      h1 {
+        font-size: clamp(32px, 4vw, 56px);
+        margin: 0 auto;
+        max-width: 460px;
+        padding: 16px 0;
+        position: relative;
+        &::before,
+        &::after {
+          background-color: colors.$colored-contrast-text;
+          content: "";
+          height: 1px;
+          left: 50%;
+          margin: 0 auto;
+          max-width: 200px;
+          position: absolute;
+          right: 50%;
+          transform: translate(-50%, -50%);
+          width: 150px;
+        }
+        &::before {
+          top: 0;
+        }
+        &::after {
+          bottom: 0;
+        }
+      }
+      .cards-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin: 64px 0;
+        width: 100%;
+        .card {
+          align-items: center;
+          display: flex;
+          justify-content: space-around;
+          margin: 0 auto;
+          max-width: 300px;
+          min-width: 300px;
+          img {
+            filter: colors.$colored-contrast-text-filter;
+            height: 112px;
+          }
+          .image-reverse {
+            transform: scaleX(-1);
+          }
+          .card-p {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            p {
+              &:nth-child(1) {
+                color: colors.$high-contrast-text;
+                font-size: 20px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -271,9 +368,13 @@ body {
       .off-screen-menu {
         display: none;
       }
+      .email {
+        display: none;
+      }
       .header-nav {
         display: flex;
         gap: 16px;
+
         a {
           color: colors.$high-contrast-text;
           font-size: 24px;
@@ -289,6 +390,15 @@ body {
       .name-links {
         .my-story {
           display: block;
+        }
+      }
+      .skills {
+        .cards-container {
+          flex-direction: row;
+          justify-content: center;
+          .card {
+            margin: 0;
+          }
         }
       }
     }

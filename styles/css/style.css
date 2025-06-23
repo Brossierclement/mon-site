@@ -4,6 +4,7 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -11,9 +12,33 @@ a {
   text-decoration: none;
 }
 
-h1 {
+.custom-title {
   color: #e9d19c;
   font-family: MedievalSharp;
+  font-size: clamp(32px, 4vw, 56px);
+  margin: 0 auto;
+  max-width: 460px;
+  padding: 16px 0;
+  position: relative;
+  text-align: center;
+}
+.custom-title::before, .custom-title::after {
+  background-color: #e9d19c;
+  content: "";
+  height: 1px;
+  left: 50%;
+  margin: 0 auto;
+  max-width: 200px;
+  position: absolute;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+}
+.custom-title::before {
+  top: 0;
+}
+.custom-title::after {
+  bottom: 0;
 }
 
 body {
@@ -136,7 +161,12 @@ body header.visible::before {
   opacity: 1;
 }
 body main {
-  padding: 0 16px;
+  padding: 0 24px;
+}
+body main #about,
+body main #skills,
+body main #projects {
+  scroll-margin-top: 104px;
 }
 body main .name-links {
   align-items: center;
@@ -155,6 +185,7 @@ body main .name-links .my-story {
 }
 body main .name-links .my-name {
   color: #eeeeee;
+  font-family: MedievalSharp;
   font-size: 60px;
   line-height: 0.9;
   margin-top: auto;
@@ -221,31 +252,6 @@ body main .introduce {
   text-align: center;
   position: relative;
 }
-body main .introduce h1 {
-  font-size: clamp(32px, 4vw, 56px);
-  margin: 0 auto;
-  max-width: 460px;
-  padding: 16px 0;
-  position: relative;
-}
-body main .introduce h1::before, body main .introduce h1::after {
-  background-color: #e9d19c;
-  content: "";
-  height: 1px;
-  left: 50%;
-  margin: 0 auto;
-  max-width: 200px;
-  position: absolute;
-  right: 50%;
-  transform: translate(-50%, -50%);
-  width: 150px;
-}
-body main .introduce h1::before {
-  top: 0;
-}
-body main .introduce h1::after {
-  bottom: 0;
-}
 body main .introduce p {
   font-size: 20px;
 }
@@ -281,6 +287,7 @@ body main .skills h1::after {
   bottom: 0;
 }
 body main .skills .cards-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -290,10 +297,9 @@ body main .skills .cards-container {
 body main .skills .cards-container .card {
   align-items: center;
   display: flex;
-  justify-content: space-around;
-  margin: 0 auto;
+  justify-content: space-between;
   max-width: 300px;
-  min-width: 300px;
+  width: 100%;
 }
 body main .skills .cards-container .card img {
   filter: brightness(0) saturate(100%) invert(83%) sepia(6%) saturate(2271%) hue-rotate(345deg) brightness(111%) contrast(83%);
@@ -311,6 +317,64 @@ body main .skills .cards-container .card .card-p {
 body main .skills .cards-container .card .card-p p:nth-child(1) {
   color: #eeeeee;
   font-size: 20px;
+}
+body main .projects {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+body main .projects .projects-container {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  margin: 64px 0;
+}
+body main .projects .projects-container .project-card {
+  align-items: center;
+  aspect-ratio: 1;
+  border: 1px solid #e9d19c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+body main .projects .projects-container .project-card .background-card {
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+body main .projects .projects-container .project-card ul {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}
+body main .projects .projects-container .project-card ul li {
+  align-items: center;
+  color: #eeeeee;
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  text-transform: uppercase;
+}
+body main .projects .projects-container .project-card ul li img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7155%) hue-rotate(268deg) brightness(129%) contrast(87%);
+}
+body main .projects .projects-container .project-card .logo-container {
+  bottom: 0;
+  display: flex;
+  height: 40%;
+  justify-content: center;
+  left: 0;
+  max-height: 300px;
+  padding-bottom: 8px;
+  position: absolute;
+  width: 100%;
+}
+body main .projects .projects-container .project-card .logo-container .project-logo {
+  object-fit: contain;
+  width: 60%;
 }
 body footer {
   align-items: center;
@@ -334,6 +398,9 @@ body footer .socials a img {
 @media only screen and (min-width: 768px) {
   body main .name-links .my-story {
     display: block;
+  }
+  body main .projects .projects-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -369,6 +436,14 @@ body footer .socials a img {
   }
   body main .skills .cards-container .card {
     margin: 0;
+  }
+  body main .projects .projects-container .project-card {
+    aspect-ratio: 1.5;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .projects .projects-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

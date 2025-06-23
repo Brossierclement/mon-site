@@ -19,7 +19,7 @@
   <body>
     <video
       class="background-video"
-      src="assets/videos/The Witcher 3  Animated Wallpaper  Kaer Morhen.mp4"
+      src="assets/videos/The Witcher 3.mp4"
       type="video/mp4"
       autoplay
       muted
@@ -30,9 +30,9 @@
       <p class="email">brossier.contact@gmail.com</p>
       <div class="header-fog"></div>
       <nav class="off-screen-menu">
-        <a href="">À propos</a>
-        <a href="">Projets</a>
-        <a href="">Contacts</a>
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
       </nav>
       <button class="ham-menu">
         <span></span>
@@ -40,9 +40,9 @@
         <span></span>
       </button>
       <nav class="header-nav">
-        <a href="">À propos</a>
-        <a href="">Projets</a>
-        <a href="">Contacts</a>
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
       </nav>
     </header>
     <main>
@@ -57,8 +57,8 @@
       <div class="scroll-icon">
         <div></div>
       </div>
-      <section class="introduce">
-        <h1>Bienvenue dans mon univers</h1>
+      <section id="about" class="introduce">
+        <h1 class="custom-title">Bienvenue dans mon univers</h1>
         <p>
           Salutations !
           <br /><br />
@@ -80,8 +80,8 @@
           rêveur.
         </p>
       </section>
-      <section class="skills">
-        <h1>Compétences</h1>
+      <section id="skills" class="skills">
+        <h1 class="custom-title">Compétences</h1>
         <div class="cards-container">
           <div class="card">
             <img src="assets/images/leaves-ornament.svg" alt="" />
@@ -118,6 +118,68 @@
               src="assets/images/leaves-ornament.svg"
               alt=""
             />
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="projects">
+        <h1 class="custom-title">Projets</h1>
+        <div class="projects-container">
+          <div class="project-card">
+            <img
+              class="background-card"
+              src="assets/images/twitch-project.png"
+              alt=""
+            />
+            <ul>
+              <li><img src="assets/icons/react.svg" alt="" />React</li>
+              <li>
+                <img src="assets/icons/typescript.svg" alt="" />TypeScript
+              </li>
+            </ul>
+            <div class="logo-container">
+              <img
+                class="project-logo"
+                src="assets/images/Twitch_logo_(wordmark_only).svg"
+                alt="Logo du projet"
+              />
+            </div>
+          </div>
+          <div class="project-card">
+            <img
+              class="background-card"
+              src="assets/images/unity-project.png"
+              alt=""
+            />
+            <ul>
+              <li><img src="assets/icons/csharp.svg" alt="" />Csharp</li>
+            </ul>
+            <div class="logo-container">
+              <img
+                class="project-logo"
+                src="assets/images/Unity_Technologies_logo.svg"
+                alt="Logo du projet"
+              />
+            </div>
+          </div>
+          <div class="project-card">
+            <img
+              class="background-card"
+              src="assets/images/crochet-project.png"
+              alt=""
+            />
+            <ul>
+              <li><img src="assets/icons/react.svg" alt="" />React</li>
+              <li>
+                <img src="assets/icons/typescript.svg" alt="" />TypeScript
+              </li>
+            </ul>
+            <div class="logo-container">
+              <img
+                class="project-logo"
+                src="assets/images/shigami.svg"
+                alt="Logo du projet"
+              />
+            </div>
           </div>
         </div>
       </section>
